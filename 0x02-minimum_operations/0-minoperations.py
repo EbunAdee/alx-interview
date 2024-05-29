@@ -1,22 +1,28 @@
 #!/usr/bin/python3
-
-
 """
-    The letter H is the only character in a text file.
-    There are only two operations that your text editor can do on 
-	this file: Copy All and Paste. Write a method that calculates 
-	given a number n.
-    the least amount of processes necessary to produce exactly 
-	n H characters in the file.
+In a text file, there is a single character H. Your text editor
+can execute only two operations in this file: `Copy All` and `Paste`.
+
+@TODO:
+    Deines a method that calculates the fewest number of operations
+    needed to result in exactly n H characters in the file.
 """
 
 
 def minOperations(n):
-    nOpe = 0
-    minOpe = 2
+    """
+    Calculates the fewest number of operations
+    needed to result in exactly n H characters in the file.
+    Args:
+        n (int): length of letter `H` required in the file
+    Returns:
+        (int): number of minimum operations if possible otherwise 0
+    """
+    minimumOperations = 2
+    totalOperations = 0
     while n > 1:
-        while n % minOpe == 0:
-            nOpe += minOpe
-            n /= minOpe
-        minOpe += 1
-    return nOpei
+        while n % minimumOperations == 0:
+            totalOperations += minimumOperations
+            n /= minimumOperations
+        minimumOperations += 1
+    return totalOperations
